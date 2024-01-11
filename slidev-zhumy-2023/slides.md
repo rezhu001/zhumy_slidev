@@ -12,13 +12,13 @@ info: |
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: 首页
 mdc: true
 ---
 
-# Welcome to Slidev
+# 机顶盒事业部朱梦园
 
-Presentation slides for developers
+## 2023年工作总结及2024年工作规划
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -30,11 +30,12 @@ Presentation slides for developers
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
+  <a href="https://github.com/rezhu001/Enable" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
+
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -44,22 +45,22 @@ The last comment block of each slide will be treated as slide notes. It will be 
 transition: fade-out
 ---
 
-# What is Slidev?
+# 23年大事记
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+23年七月时我正式入职，从此便开始了在GIEC的工作
 
-- 馃摑 **Text-based** - focus on the content with Markdown, and then style them later
-- 馃帹 **Themable** - theme can be shared and used with npm packages
-- 馃鈥嶐煉� **Developer Friendly** - code highlighting, live coding with autocompletion
-- 馃す **Interactive** - embedding Vue components to enhance your expressions
-- 馃帴 **Recording** - built-in recording and camera view
-- 馃摛 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 馃洜 **Hackable** - anything possible on a webpage
+- 📝 **graduation** - 从湘潭大学毕业，通过校招顺利进入杰科
+- 🎨 **Production** - 为期一个月的生产流程实操
+- 🧑 **Set-top box** - 回到工位，开始熟悉机顶盒事业部
+- 🤹 **TS analysis** - 第一个任务——编写TS码流解析工具
+- 🎥 **ALi_TDS** - 熟悉机顶盒操作系统
+- 📤 **Customer Premise Equipment** - 接手CPE项目，开始全力投入其中
+- 🛠 **To the future** - 渐入佳境，不断学习
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+Read more about [zhumy Gitlab](http://192.168.10.16/gitlab/zhumy)
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -86,359 +87,496 @@ Here is another comment.
 layout: default
 ---
 
-# Table of contents
+# 目录
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
+```c
+//点击可跳转至对应界面
 ```
 
 <Toc maxDepth="1"></Toc>
 
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|1-6|9|all} twoslash
-// TwoSlash enables TypeScript hover information and errors in markdown code blocks
-// Learn more at https://www.typescriptlang.org/dev/twoslash/
-function getUser(id: number): User {
-  return undefined as any
-}
-function saveUser(id: number, user: User) {
-  // ...
-}
-// ---cut---
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-// ^?
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="[3, 4]" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 </style>
 
 ---
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
+transition: slide-up
+level: 1
 ---
 
-# Themes
+# 导航
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+鼠标移置左下角可打开导航栏
 
-<div grid="~ cols-2 gap-2" m="t-2">
+## 快捷键
 
-```yaml
----
-theme: default
----
-```
+|     |     |
+| --- | --- |
+| <kbd>right</kbd> / <kbd>space</kbd>| 下一步操作 |
+| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | 上一步操作 |
+| <kbd>up</kbd> | 下一页 |
+| <kbd>down</kbd> | 上一页 |
+| <kbd>o</kbd> | 整体预览 |
+| <kbd>d</kbd> | 模式切换 |
 
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
-</script>
+</style>
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
 
 ---
+layout: default
+---
 
-# LaTeX
+# TS analysis
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+### 柔性数组
 
+```c {all|5|1-6|7,8|all}
+//柔性数组的结构
+typedef struct untreated_data       //存储一个TS包的数据
+{
+    unsigned int package_data_length;
+    unsigned char untreated_data[];
+}untreated_data;
+//使用时先对其进行初始化
+untreated_data *untreated_data_Path = NULL;
+//对其进行内存分配和赋值
+untreated_data_Path = malloc(sizeof (untreated_data) + package_length * sizeof (unsigned char));
+memcpy(untreated_data_Path->untreated_data, packetbuffer, package_length);
+untreated_data_Path->package_data_length = package_length;
+
+```
+
+动态数组的[内存分析](dist/assets/TS_parse/内存分析.drawio.png)
+
+优点:  
+
+- 可变长度数组，其大小随实际应用动态调整，简化内存管理
+- 减少指针调用复杂性，在存储不定长数据时，比使用指针分配数组更加高效
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+
+---
+layout: default
+---
+
+<style>
+h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+## TS analysis
+#### 动态链接库 .dll
+```c {all|3|all}
+//在.h文件中：
+//外部函数 .dll文件总入口
+_declspec(dllexport) int interface_main(const char* path);
+//外部函数 用于测试是否成功调用 .dll
+_declspec(dllexport) int dll_test();
+
+//在函数定义时：
+int interface_main(const char * path)
+{
+  //执行对应操作
+  return 0;
+}
+```
+
+- 其编译生成 descriptordll.dll 动态链接库，此时可以被其他函数动态加载（使用时加载，用完则释放）
+- 将常用的处理逻辑进行封装，方便多个程序进行复用，同时共享 DLL 内存空间，节省内存
+- 更时只需保证 API 接口一致，替换 .dll 文件即可完成单独功能的升级或替换
+- 无需重新编译整个应用程序的情况下就可以更新特定的功能，使程序更加耦合，适应性更强。
+
+
+---
+layout: default
+---
+
+<style>
+h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+## TS analysis
+#### Python 联合编程
+
+```python {all|2,5|7-9|12|all}
+
+from ctypes import *                # 引入 ctypes
+
+file_path_bytes = bytes(file_path, "utf-8")
+lib = CDLL("./descriptordll")       # 动态加载
+
+lib.dll_test()
+lib.teststring(file_path_bytes, len(file_path_bytes))
+lib.interface_main(file_path_bytes) # 调用.dll 中的 interface_main 函数
+
+a = lib._handle
+win32api.FreeLibrary(a)             # 释放动态链接库
+print('.dll will be free')
+
+```
+
+- python 使用 ctypes 加载 .dll 动态链接库，并传入参数调用库中的 interface_main 函数
+- 上层 GUI 界面使用 pyside 6 ，底层解析 TS 流逻辑使用 C 编写的 .dll
+- 最终实现 UI 界面和程序逻辑的分离
+
+
+---
+layout: default
+---
+
+<style>
+h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+## TS analysis 
+#### MVC 软件架构 及 整体框架
+
+<img src="dist/assets/TS_parse/MVC软件架构.png" class="m--25 h-125 w-auto rounded shadow" style="transform: translateX(530px);" />
+<img src="dist/assets/TS_parse/MVC软件架构2.png" class="m--97 h-95 w-auto rounded shadow" style="transform: translateX(380px);" />
+
+
+---
+layout: default
+---
+
+<style>
+h1, h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+# ALi_TDS
+## ALi - M3711C 
+### 开始正式练习 STB 项目时间并不长，很快接手了 CPE 项目，故产出较少，在学习期间，主要完成了：
+
+- 学习了SVN 的使用，理解了SVN 和 git 的区别，拉取了对应板子 DVS-PTV-08G 的代码
+- 将 STB 工程导入 Source Insight ，学习使用服务器编译代码下载烧录
+- 阅读 ALi_TDS_SDK 手册，学习 ALi_TDS 操作系统启动过程
+- 可变参数宏: ` _VA_ARGS_ `
+- 拓展： `##_VA_ARGS_`
+- 属性： `__attribute__(unused)`
+- 符号表——（静态内存区）
+
+---
+layout: image-right
+image: dist/assets/TS_parse/CPE.PNG
+---
+
+# Customer Premise Equipment > CPE
+
+## CPE 项目于 2023/10/26 日正式释放 SDK 
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
+#### 随后便开始熟悉OpenWrt操作系统，完成前期准备工作，软件功能测试、硬件适配、开发自己板子的程序、应用等  
 <br>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+#### 主要掌握了 docker、 Git 版本管理、Linux ( OpenWrt ) 命令、 shell、 Makefile、 .ipk安装包编译、.img 镜像生成、luci 架构 app 开发、lua语言等技能
+
+<style>
+h1, h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 ---
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
+layout: default
+---
+## CPE-增加用户及密码修改
+### 对应 shadow 文件：
+```c {all|1|7，8}
+root:$1$EAIaRTnR$rhSJPuT5DTd0w61K2dfso1:18724:0:99999:7:::
+daemon:*:0:0:99999:7:::
+ftp:*:0:0:99999:7:::
+network:*:0:0:99999:7:::
+nobody:*:0:0:99999:7:::
+guest:$1$bcaMiQTu$35cPxaTASJj3cnKAe8LyJ0:0:0:99999:7:::
+//其格式如下：
+username:password_hash:last_password_change:minimum_days:maximum_days:warn_days:inactive_days:expire_date:reserved
 ```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+- username: 用户名
+- password_hash: 经过哈希处理的密码
+- last_password_change: 上次修改密码的日期（从 1970 年 1 月 1 日开始的天数）
+- minimum_days: 密码可更改的最短天数
+- maximum_days: 密码有效期的最长天数
+- warn_days: 在密码过期前提醒用户的天数
+- inactive_days: 密码过期后多少天用户被禁用
+- expire_date: 密码的过期日期（从 1970 年 1 月 1 日开始的天数）
+
+
+---
+layout: default
+---
+## CPE-对设备树修改(以GPIO为例)：
+### 对应 codegen.dws 和 evb6890v_64_cpe.dws 两个文件：
+```xml
+<module name="gpio">
+            <count>235</count>
+            <gpio0>
+                <eint_mode>true</eint_mode>
+                <def_mode>0</def_mode>
+                <inpull_en>true</inpull_en>
+                <inpull_selhigh>false</inpull_selhigh>
+                <def_dir>IN</def_dir>
+                <out_high>false</out_high>
+                <varName0>GPIO_EINT_RAMDUMP_PIN</varName0>
+                <smt>true</smt>
+                <ies>true</ies>
+            </gpio0>
+```
+通过MTK TOOL python 脚本编译为 .dts 文件，在配置时，移远会对 GPIO 进行一层封装:
+```c
+static struct gpio_test_s gpio_test_table[] = {
+  {18,73,GPIO_MODE_GPIO},  //PCIE_C_RST
+  {21,75,GPIO_MODE_GPIO},  //PCIE_C_CLKREQ
+  {27,70,GPIO_MODE_GPIO},  //PCIE_B_RST
+  {39,133,GPIO_MODE_GPIO},  //WLAN_ACT
+  //...
+}
 ```
 
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
+---
+layout: default
+---
+## CPE-对设备树修改(以GPIO为例)：
 
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
+### 同时需要包含对应的 .dtsi 文件：
+```c
+{
+	model = "MT6890";
+	compatible = "mediatek,MT6890";
+	interrupt-parent = <&gic>;
+	#address-cells = <2>;
+	#size-cells = <2>;
+	gpio_leds {
+		compatible = "gpio-leds";
+		led0 {
+			label = "led9501:red:gpio";
+			gpios = <&pio 209 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "none";
+			default-state = "off";
+		};
+    //...
   }
-  frame "Foo" {
-    [Frame 4]
-  }
+  //...
 }
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
 ```
 
-</div>
+#### 随后通过 Makefile 编译为 .dtb, 最后生成 .img 文件烧入板子
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
----
 
 ---
-layout: center
-class: text-center
+layout: default
+---
+## CPE-开机root登录：
+
+```bash
+
+  config dropbear
+	option PasswordAuth 'on'
+	option RootPasswordAuth 'on'
+	option Port         '22'
+#	option BannerFile   '/etc/banner'
+	option RootLogin    '1'
+	option MaxAuthTries '4'
+
+```
+<br>
+
+## wan_lan自适应：
+```bash
+  uci set system.@system[0].quectel_main_uart='1'
+  uci set system.@system[0].quectel_log_start='1'
+  uci set system.@system[0].quectel_log_level='4'
+  uci set system.@system[0].ql_wan_lan_auto_adapt='1'
+  uci set system.@system[0].ql_wan_lan_auto_adapt_port0_disable='0'
+  uci set system.@system[0].ql_wan_lan_auto_adapt_port1_disable='0'
+  uci set system.@system[0].ql_wan_lan_auto_adapt_port2_disable='0'
+  uci set system.@system[0].ql_wan_lan_auto_adapt_port3_disable='0'
+  uci set system.@system[0].ql_wan_lan_auto_adapt_8221_disable='0'
+
+```
+
+---
+layout: default
 ---
 
-# Learn More
+# LUCI 架构：
+<img src="dist/assets/TS_parse/luci架构.png" class="m--5 h-110 w-auto rounded shadow" style="transform: translateX(200px);" />
 
-[Documentations](https://sli.dev) 路 [GitHub](https://github.com/slidevjs/slidev) 路 [Showcases](https://sli.dev/showcases.html)
+<style>
+h1, h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 0%, #146b8c 50%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+
+
+---
+layout: default
+---
+
+## LUCI_APP_slic 架构：
+
+<img src="dist/assets/TS_parse/luci架构2.png" class="m--20 h-130 w-auto rounded shadow" style="transform: translateX(500px);" />
+<img src="dist/assets/TS_parse/luci-app.png" class="m--100 h-100 w-auto rounded shadow" style="transform: translateX(420px);" />
+
+
+
+---
+layout: default
+---
+
+## LUCI_APP_wifi led修改：
+
+```lua
+function vif_disable(iface)
+    os.execute("ifconfig "..iface.." down")
+--wifi信号关闭时，新增判断
+    local rai0_status = io.popen("ifconfig rai0 2>&1"):read("*a")
+    local ra0_status = io.popen("ifconfig ra0 2>&1"):read("*a")
+    local led_path = "/sys/class/leds/cpe_wifi_status"
+    if rai0_status:match("BROADCAST MULTICAST") and ra0_status:match("BROADCAST MULTICAST") then
+        os.execute("echo 0 > " .. led_path .. "/brightness")
+    else
+        os.execute("echo 1 > " .. led_path .. "/brightness")
+    end
+
+--
+    luci.http.redirect(luci.dispatcher.build_url("admin", "mtk", "wifi"))
+end
+--wifi信号开启时，新增判断
+function vif_enable(iface)
+    local led_path = "/sys/class/leds/cpe_wifi_status"
+    os.execute("ifconfig "..iface.." up")
+--
+    os.execute("echo 1 > " .. led_path .. "/brightness")
+--
+    luci.http.redirect(luci.dispatcher.build_url("admin", "mtk", "wifi"))
+end
+
+```
+
+
+---
+layout: default
+transition: fade-out
+---
+# 杂项
+<br>
+<br>
+<br>
+
+
+## 1、C语言编程能力提升，编程思维更新
+## 2、学习了回调函数的使用和编写
+## 3、在 github pages 上部署了自己的 slidev
+## 4、熟练掌握各种工具辅助解决编程问题
+## 5、学习了网络挂载的开发方法
+## 6、学会了 docker 的部署和使用
+## 7、独立工作思考能力和与他人沟通能力提升
+
+---
+layout: default
+transition: fade-out
+---
+# 2024年展望
+<br>
+<br>
+<br>
+<br>
+
+
+## 1、深入学习Linux（OpenWrt）系统的各个模块
+## 2、深入学习底层驱动的编写和实现
+## 3、深入学习 luci_app 框架的开发
+## 4、熟知 Linux 源码到镜像文件的生成过程
+## 5、熟知各个模块，达到遇到问题深入底层分析
+## 6、学习 Linux 系统中断，进程线程编程
+## 7、学习 Linux 系统裁剪及其 内核移植
+
+---
+layout: default
+transition: slide-up
+---
+# 致谢
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# thanks
+
+# 感谢各位
